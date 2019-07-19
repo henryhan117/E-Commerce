@@ -24,18 +24,21 @@ export default class  Product extends Component {
            </Link>
    
       
-          <button  disabled = {inCart?true:false} 
+          <button className ="text-center" disabled = {inCart?true:false} 
           onClick = {()=> {
             value.addToCart(id);
             value.openModal(id);
             }}>
           {inCart?(
-          <p className = "text-capitalize mb-0" disabled>
+          <p className = "center-block text-capitalize mb-0" disabled>
         
-           in inCart
+           in cart
            </p>
            ):(
-           <i className = "fas fa-cart-plus"/>)}
+           <p className = "center-block text-capitalize mb-0">
+             addToCart
+           </p>)}
+           
           </button>
            </div>
 
@@ -46,7 +49,7 @@ export default class  Product extends Component {
 
 
 
-        <div className = "card-tooter dflex justify-content-between">
+        <div className = "card-footer dflex justify-content-between">
         <p className = "align-self-center mb-0">
         {title}</p>
         <h5 className = "text-blue font-italic mb-0">
@@ -72,5 +75,31 @@ Product.propTypes = {
 
 
 const ProductWrapper = styled.div`
+.card{
+  boreder-color:transparent;
+  transition:all 1s linear;
 
+}
+.card-footer{
+  background:transparent;
+  boreder-top:transparent;
+  transition: all 1s linear;
+
+}
+&:hover{
+  .card{
+    border:0.04rem solid rgba(0,0,0,0.2);
+    box-shadow:2px 2px 5px 0px rgba(0,0,0,0.2);
+  }
+  .card-footer{
+    background:rgba(247,247,247)
+  }
+  .img-container{
+    position:relative;
+    overflow:hidden
+  }
+  .card-img-top{
+   transition: all1s linear;
+  }
+}
 `;

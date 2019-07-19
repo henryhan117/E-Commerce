@@ -44,7 +44,7 @@ export default class Detail extends Component {
               </h4>
 
               <p className ="text-capitalize font-weight-bold mt-3 mb-0">
-              some info about product:
+              
               </p>
               <p className = "text-muted lead">{info}</p>
 
